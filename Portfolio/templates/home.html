@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+  </head>
+ <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Baloo+Bhaijaan+2:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+  /* CSS Reset */
+  body{
+      font-family: 'Alkalami', serif;
+       margin:0px;
+       padding:0px;
+       background-size:1530px 800px;
+       background-image: url('img/mountain-3079611_960_720.jpg')
+  }
+  .left{
+       display: inline-block;
+      /* border: 2px solid red; */
+       position: absolute;
+        left: 70px;
+        top: 33px;
+  }
+  .left img{
+      width: 75px;
+      margin-left: 20px auto;
+      margin-right:  20px auto;
+
+
+      }
+
+  .left div{
+         line-height: 20px;
+         font-size: 24px;
+         text-align: center;
+         }
+
+   .mid{
+      display: block;
+      width: 55%;
+      margin: 25px auto;
+     /* border: 2px solid green; */
+
+
+
+  }
+  .right{
+      position: absolute;
+      right: 34px;
+      top: 33px;
+      display: inline-block;
+     /* border: 2px solid blue; */
+  }
+  .navbar{
+        display: inline-block;
+   }
+   .navbar li{
+           display: inline-block;
+           font-size: 25px;
+   }
+   .navbar li a{
+         color: black;
+         text-decoration: none;
+         padding: 34px 23px;
+         }
+   .navbar li a:hover, .navbar li a.active{
+       text-decoration: underline;
+       color: lightblue;
+   }
+   .btn{
+      font-family: 'Alkalami', serif;
+      margin: 0px 10px;
+      background-color: black;
+      color: white;
+      padding:8px 18px;
+      border: 5px solid grey;
+      border-radius: 10px;
+      font-size: 30px
+      cursor: pointer;
+      }
+   .btn:hover{
+         background-color: lightblue;
+     }
+   .container{
+           border: 2px solid white;
+           margin: 45px 490px;
+           padding: 25px;
+           width: 35%;
+           border-radius: 30px;
+           }
+   .form-group input{
+           font-family: 'Alkalami', serif;
+           text-align: center;
+           display:block;
+           width:335px;
+           padding:6px;
+           border: 2px solid black;
+           margin: 11px auto;
+           font-size: 20px;
+           border-radius: 10px;
+           }
+   .container h1{
+           text-align: center;
+           color: black;
+           }
+   .container button{
+           display: block;
+           width: 60%;
+           margin: 20px auto;
+           {
+
+
+
+
+  </style>
+<body>
+      <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/down.png" alt="">
+            <div><i>Mantra Meditation</i></div>
+
+        </div>
+
+
+        <!-- Mid Box for navbar -->
+        <div class="mid">
+           <ul class="navbar">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+               <li><a href="/registration">Registration</a></li>
+               <li><a href="/contact">Contact Us</a></li>
+
+          </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+        <div class="right">
+        <button class="btn">Call Us Now</button>
+        <button class="btn">Read More</button>
+
+        </div>
+      </header>
+<div class="container">
+   <h1>WELCOME TO MANTRA MEDITATION</h1>
+    <p><i>"Brilliant things happen in calm minds. Be calm. You're brilliant."</i>
+    </p>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <input type="text" id=""   placeholder="Enter your email ">
+        </div>
+          <div class="form-group">
+            <input type="text"  name=""  placeholder="Enter your password ">
+        </div>
+        <button class="btn">Sign Up</button>
+    </form>
+
+
+</div>
+</body>
+</html>

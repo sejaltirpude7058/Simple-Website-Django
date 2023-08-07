@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery</title>
+  </head>
+ <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Baloo+Bhaijaan+2:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+  /* CSS Reset */
+  body{
+      font-family: 'Alkalami', serif;
+       margin:0px;
+       padding:0px;
+       box-sizing: border-box;
+       background-color: lightgray;
+
+
+  }
+  .left{
+       display: inline-block;
+      /* border: 2px solid red; */
+       position: absolute;
+        left: 70px;
+        top: 33px;
+  }
+  .left img{
+      width: 75px;
+      margin-left: 20px auto;
+      margin-right:  20px auto;
+
+      }
+
+  .left div{
+         line-height: 20px;
+         font-size: 24px;
+         text-align: center;
+         }
+
+   .mid{
+      display: block;
+      width: 55%;
+      margin: 25px auto;
+     /* border: 2px solid green; */
+
+
+  }
+  .right{
+      position: absolute;
+      right: 34px;
+      top: 33px;
+      display: inline-block;
+     /* border: 2px solid blue; */
+  }
+  .navbar{
+        display: inline-block;
+   }
+   .navbar li{
+           display: inline-block;
+           font-size: 25px;
+   }
+   .navbar li a{
+         color: black;
+         text-decoration: none;
+         padding: 34px 23px;
+         }
+   .navbar li a:hover, .navbar li a.active{
+       text-decoration: underline;
+       color: crimson;
+   }
+   .btn{
+      font-family: 'Alkalami', serif;
+      margin: 0px 10px;
+      background-color: black;
+      color: white;
+      padding:8px 18px;
+      border: 5px solid gray;
+      border-radius: 10px;
+      font-size: 30px
+      cursor: pointer;
+      }
+   .btn:hover{
+         background-color: crimson;
+
+     }
+     input{
+      display: none;
+      }
+  .container{
+      width: 100%;
+      text-align: center;
+      }
+  .top-content{
+      text-align: center;
+      background-color: gray;
+      width: 90%;
+      margin:  0 auto 20px auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 3px 3px 5px black;
+      }
+  .photos-gallery{
+       text-align: center;
+
+       }
+  h1{
+     font-weight: normal;
+     font-size: 35px;
+     position: relative;
+     margin: 40px 0;
+     }
+   h1::before{
+     content: '';
+     position: absolute;
+     width: 100px;
+     height: 3px;
+     background-color: crimson;
+     bottom: -10px;
+     left: 50%;
+     transform: translatex(-50%);
+     animation: animate 4s linear infinite;
+     }
+     @keyframes animate{
+       0%{
+           width: 100px;
+        }
+       50%{
+            width: 200px;
+        }
+       100%{
+           width: 100px;
+        }
+     }
+   h3{
+     height: 100%;
+     background-color: lightgray;
+     line-height: 60px;
+     padding: 0 50px;
+     color: crimson;
+     }
+     label{
+         display: inline-block;
+         height: 100%;
+         margin:  0 20px;
+         line-height: 60px;
+         font-size: 18px;
+         color: lightgray;
+         cursor: pointer;
+         transition: .5s;
+     }
+     label:hover{
+          color: black;
+     }
+     .photos-gallery{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            }
+     .pic{
+       position: relative;
+       height: 230px;
+       border-radius: 10px;
+       box-shadow: 5px 3px 5px gray;
+       cursor: pointer;
+       transition: .5s
+       }
+     .pic img{
+           width: 100%;
+           height: 100%;
+           border-radius: 10px;
+           transition: .5s;
+     }
+     .pic::before{
+           content: "PHOTO GALLERY";
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           color: white;
+           font-size: 25px;
+           font-weight: bold;
+           width: 100%;
+           margin-top: -100px;
+           opacity: 0;
+           transition: .3s;
+           transition-delay: .2s;
+           z-index: 1;
+           }
+    .pic:after{
+          content:"";
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          border-radius: 10px;
+          height: 100%;
+          background-color: rgba(0,0,0,.4);
+          transition: .3s;
+     }
+     .pic:hover::after{
+             height: 100%;
+         }
+     .pic:hover::before{
+            margin-top: 0;
+            opacity: 1;
+           }
+    #check1:checked ~ .container  .photos-gallery .pic{
+      opacity: 1;
+      transform: scale(1);
+      position: relative;
+      transition: .5s;
+      }
+    #check2:checked ~ .container .photos-gallery .nature{
+      opacity: 1;
+      transform: scale(1);
+      position: relative;
+      transition: .5s;
+      }
+    #check2:checked ~ .container  .photos-gallery .architecture;
+    #check2:checked ~ .container  .photos-gallery  .himalayas{
+      opacity: 0;
+      transform: scale(0);
+      position: absolute;
+      transition: .5s;
+      }
+
+  </style>
+<body>
+      <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/down.png" alt="">
+            <div><i>Mantra Meditation</i></div>
+
+        </div>
+
+
+        <!-- Mid Box for navbar -->
+        <div class="mid">
+           <ul class="navbar">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about" class="">About Us</a></li>
+            <li><a href="/gallery" class="active">Gallery</a></li>
+             <li><a href="/registration">Registration</a></li>
+             <li><a href="/contact">Contact Us</a></li>
+
+          </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+        <div class="right">
+        <button class="btn">Call Us Now</button>
+
+        </div>
+          <div class="meditate">
+              <input type="radio" name="Photos" id="check1" checked>
+              <input type="radio" name="Photos" id="check2">
+              <input type="radio" name="Photos" id="check3">
+              <input type="radio" name="Photos" id="check4">
+              <input type="radio" name="Photos" id="check5">
+              <input type="radio" name="Photos" id="check6">
+          </div>
+          <div class="container">
+              <h1>OUR PHOTO GALLERY</h1>
+             <div class="top-content">
+              <h3>Photo Gallery</h3>
+              <label for="check1">All Photos</label>
+              <label for="check2">Nature</label>
+              <label for="check3">Architecture</label>
+              <label for="check4">Himalayas</label>
+              <label for="check5">Monks</label>
+              <label for="check6">People Meditating</label>
+             </div>
+
+
+          <div class="photos-gallery">
+              <div class="pic nature">
+                  <img src="img/DSC00713-copy-1.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/DSC00857.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/DSC00861.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-01.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-02.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-03.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-04.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-05.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-06.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-07.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-08.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-09.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-10.jpg">
+               </div>
+
+                    <div class="pic nature">
+                  <img src="img/nature-11.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-12.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-13.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-14.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-15.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-16.jpg">
+              </div>
+                    <div class="pic nature">
+                  <img src="img/nature-17.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-18.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-19.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-20.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-23.jpg">
+              </div>
+                    <div class="pic nature">
+                  <img src="img/nature-24.jpg">
+              </div>
+               <div class="pic nature">
+                  <img src="img/nature-25.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-01.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-02.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-03.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-04.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-05.jpg">
+              </div>
+              <div class="pic architecture">
+                  <img src="img/arch-06.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-07.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-08.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-09.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-10.jpg">
+              </div>
+              <div class="pic architecture">
+                  <img src="img/arch-12.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-13.jpg">
+              </div>
+
+                <div class="pic architecture">
+                  <img src="img/arch-14.jpg">
+              </div>
+              <div class="pic architecture">
+                  <img src="img/arch-15.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-16.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-17.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-18.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-20.jpg">
+              </div>
+              <div class="pic architecture">
+                  <img src="img/arch-22.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-23.jpg">
+              </div>
+                <div class="pic architecture">
+                  <img src="img/arch-25.jpg">
+              </div>
+              <div class="pic architecture">
+                  <img src="img/arch-26.jpg">
+              </div>
+               <div class="pic architecture">
+                  <img src="img/arch-27.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-01.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-02.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-03.jpg">
+              </div>
+              <div class="pic himalayas">
+                  <img src="img/himalayas-04.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-05.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-06.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-07.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-08.jpg">
+              </div>
+              <div class="pic himalayas">
+                  <img src="img/himalayas-09.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-10.jpg">
+              </div>
+
+                <div class="pic himalayas">
+                  <img src="img/himalayas-11.jpg">
+              </div>
+              <div class="pic himalayas">
+                  <img src="img/himalayas-12.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-13.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-14.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-15.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-16.jpg">
+              </div>
+              <div class="pic himalayas">
+                  <img src="img/himalayas-17.jpg">
+              </div>
+               <div class="pic himalayas">
+                  <img src="img/himalayas-18.jpg">
+              </div>
+                <div class="pic himalayas">
+                  <img src="img/himalayas-19.jpg">
+              </div>
+              <div class="pic himalayas">
+                  <img src="img/himalayas-20.jpg">
+              </div>
+               <div class="pic monks">
+                  <img src="img/download1.jpeg">
+               </div>
+
+              <div class="pic monks">
+                  <img src="img/download1.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download2.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download3.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download4.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download5.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download6.jpeg">
+               </div>
+
+             <div class="pic monks">
+                  <img src="img/download7.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download8.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download9.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download10.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download11.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download12.jpeg">
+               </div>
+              <div class="pic monks">
+                  <img src="img/download13.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo1.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo2.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo3.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo4.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo5.jpeg">
+               </div>
+               <div class="pic people">
+                  <img src="img/peo6.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo7.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo8.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo9.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo10.jpeg">
+               </div>
+               <div class="pic people">
+                  <img src="img/peo11.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo12.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo13.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo14.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo15.jpeg">
+               </div>
+              <div class="pic people">
+                  <img src="img/peo16.jpeg">
+               </div>
+          </div>
+
+          </div>
+
+      </header>
+</body>
+</html>

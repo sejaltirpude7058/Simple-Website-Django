@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us</title>
+  </head>
+ <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Baloo+Bhaijaan+2:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+  /* CSS Reset */
+  body{
+      font-family: 'Alkalami', serif;
+       background-size: 1520px 1150px;
+  }
+  .left{
+       display: inline-block;
+      /* border: 2px solid red; */
+       position: absolute;
+        left: 70px;
+        top: 33px;
+  }
+  .left img{
+      width: 75px;
+      margin-left: 20px auto;
+      margin-right:  20px auto;
+
+      }
+
+  .left div{
+         line-height: 20px;
+         font-size: 24px;
+         text-align: center;
+         }
+
+   .mid{
+      display: block;
+      width: 55%;
+      margin: 25px auto;
+     /* border: 2px solid green; */
+
+
+  }
+  .right{
+      position: absolute;
+      right: 34px;
+      top: 33px;
+      display: inline-block;
+     /* border: 2px solid blue; */
+  }
+  .navbar{
+        display: inline-block;
+   }
+   .navbar li{
+           display: inline-block;
+           font-size: 25px;
+   }
+   .navbar li a{
+         color: black;
+         text-decoration: none;
+         padding: 34px 23px;
+         }
+   .navbar li a:hover, .navbar li a.active{
+        /* text-decoration: underline; */
+       color: crimson;
+   }
+   .btn{
+      font-family: 'Alkalami', serif;
+      margin: 0px 10px;
+      background-color: black;
+      color: white;
+      padding:8px 18px;
+      border: 5px solid black;
+      border-radius: 10px;
+      font-size: 30px
+      cursor: pointer;
+      }
+   .btn:hover{
+         background-color: crimson;
+     }
+     .container{
+          /*  border: 2px solid black; */
+           margin: 0px 430px;
+           padding: 20px;
+           width: 40%;
+          border-radius: 30px;
+           }
+   .form-group input{
+           font-family: 'Alkalami', serif;
+           text-align: center;
+           display:block;
+           width:500px;
+           padding:5px;
+           border: 2px solid black;
+           margin: 1px auto;
+           font-size: 20px;
+           border-radius: 15px;
+           }
+   .form-group label{
+           font-family: 'Alkalami', serif;
+           display:block;
+           width:500px;
+           padding:5px;
+           color: solid black;
+
+           margin: 6px auto;
+           font-size: 20px;
+           border-radius: 15px;
+           }
+
+   .container h1{
+           text-align: center;
+           color: white;
+           }
+   .container button{
+           display: block;
+           width: 60%;
+           margin: 20px auto;
+           font-family: 'Alkalami', serif;
+           background-color: black;
+           color: white;
+           padding:8px 18px;
+           border: 6px solid grey;
+           border-radius: 10px;
+           font-size: 45px
+           cursor: pointer;
+      }
+   .container button:hover{
+         background-color: lightblue;
+     }
+   .form-group option{
+            text-align: center;
+            }
+   .form-group textarea{
+            width: 80%;
+            padding: 0px;
+
+  </style>
+   <body style="background-image:url('/static/home/img/asddfgj.jpg');>
+      <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+           <img src="/static/home/img/down.png" alt="">
+            <div><i>Mantra Meditation</i></div>
+
+        </div>
+
+
+        <!-- Mid Box for navbar -->
+        <div class="mid">
+           <ul class="navbar">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about" class="">About</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+             <li><a href="/registration">Registration</a></li>
+             <li><a href="/contact" class="active">Contact Us</a></li>
+           </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+        <div class="right">
+        <button class="btn">Call Us Now</button></div>
+     </header>
+          <div class="container">
+
+    <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+    <hr>
+
+       <form action="/contact" method="post">
+           {% csrf_token %}
+           <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your name..">
+               <label for="phone">Phone Number</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Your phone number..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="india">India</option>
+            <option value="usa">USA</option>
+        </select>
+        <label for="write">Subject</label>
+        <textarea id="write" name="write" placeholder="Write something.." style="height:170px"></textarea>
+                <button type="submit" class="submitbtn">Submit</button>
+           </div>
+      </form>
+
+       </div>
+      </div>
+   </body>
+</html>
